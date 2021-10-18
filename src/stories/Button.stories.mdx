@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Button } from "./Button";
+
+<Meta title="Button" />
+
+<!-- // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+export default {
+title: "Example/Button",
+component: Button,
+// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+argTypes: {
+backgroundColor: { control: "color" },
+},
+}; -->
+
+export const Template = (args) => <Button {...args} />;
+
+export const defaultArgs = {
+  primary: true,
+  ...foo,
+};
+
+<Story
+  name="Primary Button"
+  args={{
+    primary: true,
+    label: "Button",
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+<Story
+  name="Secondary Button"
+  args={{
+    label: "Button",
+  }}
+>
+  {Template.bind({})}
+</Story>
